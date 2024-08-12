@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@latest/build/player/lottie.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        html {
+        scroll-behavior: smooth;
+        }
+        body {
+            font-family: sans-serif;
+            margin: 0px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            width: 96%;
+            background: #FFFFFF;
+        }
+        .progress-container {
+  width: 100%;
+  height: 4px;
+  background: #ccc;
+  position: fixed;
+  z-index: 2;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #000000;
+  width: 0%;
+}
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+        }
+        .resume-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .name{
+            font-family: cursive;
+            margin: 0px;
+        }
+        .name1{
+            font-family: cursive;
+            margin: 0px;
+            color: #FFFFFF;
+            padding: 8px 8px 8px 32px;
+        }
+        .flex-container {
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 7%;
+        }
+
+        .flex-item-left {
+        padding: 10px;
+        flex: 50%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        }
+
+        .flex-item-right {
+        padding: 10px;
+        flex: 50%;
+        }
+        .mainhead{
+            font-size: 3.5vw;
+            text-align: start;
+            margin: 0px;
+        }
+        .subtitle{
+            font-size: 1.2vw;
+            text-align: start;
+            margin: 0px;
+        }
+        .iconsdiv{
+            border: 1px solid #000000;
+            border-radius: 3px;
+            width: 4vh;
+            height: 4vh;
+            padding: 8%;
+
+        }
+        .iconsdiv img{
+            width: 100%;
+        }
+        .iconsdiv:hover{
+            background-color: #000000;
+        }
+        .iconsdiv:hover img{
+            filter: invert(100%) sepia(0%) saturate(7481%) hue-rotate(339deg) brightness(111%) contrast(104%);
+        }
+        .icondivcontainer{
+            width: 12vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            gap: 6%;
+            margin-top: 20px;
+        }
+        .menuBar {
+  display: none;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 3vh;
+  height: 0.5vh;
+  background-color: #333;
+  margin: 2px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 0px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+.sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+        .mainheadAnimi {
+            animation: drop-in 1s ease 200ms backwards;
+        }
+        .subtitle {
+            animation: drop-in 1200ms ease 500ms backwards;
+        }
+
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns */
+.column {
+  flex: 1%;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  transform:translateY(-100vh);
+  animation:drop 1.5s cubic-bezier(0, 0, 0.35, 1) forwards; 
+  animation-delay:0.5s;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 10%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: row;
+  }
+}
+.column div{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 97px;
+    border: 3px solid #000000;
+    padding: 20px;
+}
+.column div:hover{
+    background-color: #000000;
+}
+.column div:hover p{
+    color: #FFFFFF;
+}
+.column div:hover img{
+    filter: invert(100%) sepia(0%) saturate(7481%) hue-rotate(339deg) brightness(111%) contrast(104%);
+}
+.row .column div img{
+    width: 5vh;
+}
+.row .column div p{
+    margin: 0px;
+    font-weight: 700;
+    font-family: cursive;
+}
+.experiencehead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.years{
+    width: 100%;
+    text-align: right;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+.designation{
+    width: 100%;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.experiencediv{
+    padding: 20px;
+    background: #000000;
+    margin-top: 50px;
+}
+.borderdiv:nth-child(even){
+    background: #474747;
+}
+.borderdiv{
+    border: 1px solid #DADADA;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.experiencehead img{
+    width: 10vh;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.yearsMOB{
+            display: none;
+        }
+        .aboutclass{
+            margin: 30px;
+        }
+        .subtitleMOB{
+            font-size: 16px;
+            text-align: start;
+        }
+        input{
+            width: 100%;
+    border: 2px solid black;
+    height: 39px;
+    border-radius: 6px;
+    text-indent: 10px;
+    margin-top: 10px;
+        }
+        textarea{
+            width: 100%;
+    border: 2px solid black;
+    border-radius: 6px;
+    text-indent: 10px;
+    margin-top: 10px;
+        }
+        .getInTouch{
+            background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+        }
+        .semitext{
+            font-size: medium;
+            font-weight: 700;
+            text-align: start;
+            font-size: 22px;
+        }
+        .ripple {
+    width: 10px;
+    height: 10px;
+    background-color: #B2DFDB;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    animation: ripple-effect 0.6s ease-out forwards;
+    z-index: 999999;
+}
+
+@keyframes ripple-effect {
+    to {
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+    }
+}
+
+@keyframes drop-in {
+ from {
+  opacity: 0;
+  transform: translateY(-100px);
+ }
+ to {
+  opacity: 1;
+  transform: translate(0px);
+ }
+}
+@keyframes drop {
+  0% {
+    transform: translateY(-100vh);
+    animation-timing-function: ease-in; }
+  40% {
+    transform: translateY(-30vh);
+    animation-timing-function: ease-in; }
+	65% {
+    transform: translateY(-20vh);
+    animation-timing-function: ease-in; }
+	82% {
+    transform: translateY(-10vh);
+    animation-timing-function: ease-in; }
+	92% {
+    transform: translateY(-5vh);
+    animation-timing-function: ease-in; }
+	25%, 55%, 75%, 87%, 97%, 100% {
+    transform: translateY(0);
+    animation-timing-function: ease-out; }
+}
+@media screen and (min-width: 801px) {
+    .aboutclass .leftDiv{
+        flex: 0%;
+    }
+    .mailSent{
+        flex: 25%;
+    }
+}
+        @media screen and (max-width: 800px) {
+        .flex-container {
+            flex-direction: column-reverse;
+        }
+        .aboutclass{
+            flex-direction: column;
+            margin: 20px;
+        }
+        
+        .mainhead{
+            font-size: 4.5vw;
+            text-align: center;
+        }
+        .subtitle{
+            font-size: 1.2vw;
+            text-align: center;
+        }
+        .icondivcontainer{
+            width: 100%;
+            gap: 0%;
+        }
+        .iconsdiv{
+            padding: 1%;
+            margin: 2%;
+        }
+        .menuBar{
+            display: inline-block;
+        }
+        .nav{
+            display: none;
+        }
+        .downloadhref{
+            display: none;
+        }
+        .experiencehead img{
+            width: 18%;
+            height: 18%;
+        }
+        .years{
+            display: none;
+        }
+        .yearsMOB{
+            width: 100%;
+            text-align: left;
+            color: #FFFFFF;
+            font-size: 12px;
+            display: block;
+        }
+        .aboutimg{
+            width: 100%;
+        }
+        .contact{
+            flex-direction: column;
+            
+        }
+        .contactright{
+            padding: 0px !important;
+            margin: 26px;
+        }
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+    <header class="header">
+        <div>
+            <h2 class="name">
+                Mahesh
+            </h2>
+        </div>
+        <div class="menuBar" onclick="slider(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+        <nav class="nav">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact Me</a></li>
+        </nav>
+        <a href="/assets/resume.pdf" download class="downloadhref">
+            <button class="resume-button"><i class="fa fa-download"></i> Resume</button>
+        </a>
+    </header>
+    
+    <div class="flex-container ">
+        <div class="leftDiv flex-item-left " style="margin-left: 30px;">
+            <p class="mainhead mainheadAnimi" style="--n:53">Hello I'm <b>Mahesh Babu.</b> <b>Frontend Developer</b> Based In <b>India.</b></p>
+            <p class="subtitle">I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
+            <div class="icondivcontainer">
+                <!-- <div class="iconsdiv">
+                    <img src="../assets/whatsapp.png" />
+                </div> -->
+                <div class="iconsdiv" id="skills" onclick="window.location.href='https://www.linkedin.com/in/mahesh-babu-kethineni-3a40a7221?utm_campaign=share_via&utm_content=profile&utm_medium=android_app'">
+                    <img src="../assets/linkedin.png" />
+                </div>
+            </div>
+        </div>
+        <div class="rightDiv flex-item-right ">
+            <div id="lottie-container">
+            </div>
+        </div>
+    </div>
+    <div class="mySkils" >
+        <p class="mainhead" style="text-align: center;" >My <b>Skills</b></p>
+        <div class="row">
+            <div class="column">
+                <div>
+                    <img src="../assets/ionic_logo_black.png" />
+                    <p>Ionic</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/angularjs.png" />
+                    <p>Angular</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/ts.png" />
+                    <p>TypeScript</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/icon-git.png" />
+                    <p>Git</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/ionic_logo_black.png" />
+                    <p>Html</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/css-3.png" />
+                    <p>css</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/sass.png" />
+                    <p>Scss/Sass</p>
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <img src="../assets/java-script.png" />
+                    <p>JavaScript</p>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div class="experiencediv">
+        <p class="mainhead" style="text-align: center;color: #FFFFFF;">My <b>Experience</b></p>
+        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="600">
+            <div class="experiencehead">
+                <img src="../assets/kshema.jpg" style="width: 10vh;"><p class="designation">UI Developer at KshemaGeneralInsurance</p><p class="years">Feb2023 - Present</p>
+            </div>
+            <p class="yearsMOB">Feb2023 - Present</p>
+            <p style="color: #FFFFFF;">As s UI developer, I lead Androidmdevelopment projects using Ionic, Angular, TypeScript, Html and SCSS with a particular focus on the crop insurance Android project where I implemented uaer focused
+                features. I also designed and developed a Progressive Web APP (PWA) with Ionic , Which enhanced cross-platform accessibility. My proficiency with the Google Maps API allowed me to create interactive
+                 polygons, markers and layers. Additionally, I developed a verity of applications and APKs using HTML, CSS and JavaScript, conducted through bug fixes to improve application performance and user experience and demonstrated basic Git operations for version control.
+            </p>
+        </div>
+        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="600">
+            <div class="experiencehead">
+                <img src="../assets/itus.png" style="width: 10vh;"><p class="designation">Intern at Itus Insurance Brokers Private Limited</p><p class="years">Oct2022 - Feb2023</p>
+            </div>
+            <p class="yearsMOB">Oct2022 - Feb2023</p>
+            <p style="color: #FFFFFF;">
+                (Internal transfer to Kshema general insurance)<br />
+                As an intern in UI screen development, I designed and developed user interfaces using Ionic and Angular. I created visually appealing and user-friendly screens, utilizing Ionic's interactive UI components and Angular's robust features. I implemented responsive design, built reusable UI components, and integrated Ionic's pre-built components to speed up development. I also worked on implementing features such as user authentication, data binding, and API integration, gaining skills and knowledge to develop robust and scalable applications.
+            </p>
+        </div>
+
+    </div>
+    <div class="flex-container aboutclass" data-aos="fade-up" data-aos-offset="600" id="about">
+        <div class="leftDiv flex-item-left ">
+            <div style="height: 100%;">
+                <img class="aboutimg" src="../assets/about.png" style="max-height: 80%;"/>
+            </div>
+        </div>
+        <div class="rightDiv flex-item-right ">
+            <p class="mainhead" style="text-align: start;">About <b>Me</b></p>
+            <p class="subtitleMOB">A passionate and self-driven UI Developer with a flair for crafting exceptional user experiences. I specialize in Android development, with a strong foundation in Ionic, Angular, Typescript, JavaScript, HTML, and SCSS, which enables me to bring dynamic mobile applications and Progressive Web Apps (PWAs) to life. I'm meticulous about creating pixel-perfect designs and writing clean, efficient, and highly performant code that exceeds expectations.
+
+                With a career spanning over 4 years, I've been on a mission to continually improve my skills, embracing new challenges and staying up-to-date with the latest technologies. Currently, I'm excited to be working on cutting-edge projects that showcase my expertise in Google Maps API integration, bug fixes, and version control. My passion for delivering top-notch user experiences drives me to push the boundaries of what's possible in mobile app development.
+                
+                When I'm not in developer mode, you can find me exploring new technologies or expanding my skill set. I'm always eager to learn and grow as a developer, and I'm excited to see where my passion for mobile app development takes me next.</p>
+        </div>
+    </div>
+    <div class="flex-container"  id="contact" style="padding-top: 0;">
+        <div class="leftDiv flex-item-left mailSent" style="padding: 0 77px 40px 77px;">
+            <div style="height: 100%;">
+                <form action="mailto:maheshbabukethineni@gmail.com" method="post" enctype="text/plain">
+                <input type="text" id="name" name="name" placeholder="Your name"><br>
+                <input type="text" id="email" name="email" placeholder="Email"><br>
+                <input type="text" id="web" name="web" placeholder="Your website (If exists)"><br>
+                <textarea id="textarea" name="textarea" rows="10" cols="50" placeholder="How can I help?*"></textarea><br>
+                <button type="submit" class="getInTouch">Get In Touch</button>
+                </form>
+            </div>
+        </div>
+        <div class="rightDiv flex-item-right contactright " style="padding: 0 77px 40px 77px;">
+            <p class="mainhead" style="text-align: start;"><b>Let’s</b> talk <b>for</b> <br/><b>Something special</b></p>
+            <p class="subtitleMOB">A passionate and self-driven UI Developer with a flair for crafting exceptional user experiences. I specialize in Android development, with a strong foundation in Ionic, Angular, Typescript, JavaScript, HTML, and SCSS, which enables me to bring dynamic mobile applications and Progressive Web Apps (PWAs) to life. I'm meticulous about creating pixel-perfect designs and writing clean, efficient, and highly performant code that exceeds expectations.
+
+                With a career spanning over 4 years, I've been on a mission to continually improve my skills, embracing new challenges and staying up-to-date with the latest technologies. Currently, I'm excited to be working on cutting-edge projects that showcase my expertise in Google Maps API integration, bug fixes, and version control. My passion for delivering top-notch user experiences drives me to push the boundaries of what's possible in mobile app development.
+                
+                When I'm not in developer mode, you can find me exploring new technologies or expanding my skill set. I'm always eager to learn and grow as a developer, and I'm excited to see where my passion for mobile app development takes me next.</p>
+                <p class="semitext">maheshbabukethineni@gmail.com</p>
+                <p class="semitext">7207292059</p>
+        </div>
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <h2 class="name1">
+            Mahesh
+        </h2>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <script>
+
+        // Load the JSON animation data
+        lottie.loadAnimation({
+          container: document.getElementById('lottie-container'),
+          path: '../assets/personcoding.json',
+          renderer: 'svg' // Or 'canvas'
+        });
+        var count = 1;
+        function slider(x) {
+            x.classList.toggle("change");
+            console.log('ok',count,count % 2)
+            if(count % 2 == 0){
+                console.log('ok')
+                count = 1;
+                this.closeNav();
+            }
+            else{
+                count = count+1;
+                console.log('ok1',count)
+                this.openNav();
+
+            }
+            
+        }
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        }
+                // When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+document.addEventListener('mousemove', (e) => {
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple');
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    document.body.appendChild(ripple);
+
+    ripple.addEventListener('animationend', () => {
+        ripple.remove();
+    });
+});
+      </script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+</html>
