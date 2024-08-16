@@ -198,6 +198,140 @@
   animation-delay:0.5s;
 }
 
+
+.center {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .stack-area {
+        width: 100%;
+        height: 300vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .right,
+      .left {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        box-sizing: border-box;
+        flex-basis: 50%;
+      }
+      .cards {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .card {
+        width: 40vw;
+        height: 45vh;
+        max-width: 350px;
+        max-height: 350px;
+        box-sizing: border-box;
+        padding: 35px;
+        border-radius: 6mm;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: 0.6s ease-in-out;
+      }
+      .card:nth-child(1) {
+        background: rgb(64, 122, 255);
+        z-index: 8;
+      }
+      .card:nth-child(2) {
+        background: rgb(221, 62, 88);
+        z-index: 7;
+      }
+      .card:nth-child(3) {
+        background: rgb(186, 113, 245);
+        z-index: 6;
+      }
+      .card:nth-child(4) {
+        background: rgb(247, 92, 208);
+        z-index: 5;
+      }
+      .card:nth-child(5) {
+        background: rgb(64, 122, 255);
+        z-index: 4;
+      }
+      .card:nth-child(6) {
+        background: rgb(221, 62, 88);
+        z-index: 3;
+      }
+      .card:nth-child(7) {
+        background: rgb(186, 113, 245);
+        z-index: 2;
+      }
+      .card:nth-child(8) {
+        background: rgb(247, 92, 208);
+        z-index: 1;
+      }
+      
+      .sub {
+        font-family: poppins;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .card-content {
+        display: flex;
+        justify-content: center;
+      }
+      .card.active {
+        transform-origin: bottom left;
+      }
+      .left {
+        align-items: center;
+        flex-direction: column;
+      }
+      .sub-title {
+        width: 420px;
+        font-family: poppins;
+        font-size: 14px;
+        margin-top: 30px;
+      }
+      .sub-title button {
+        font-family: poppins;
+        font-size: 14px;
+        padding: 15px 30px;
+        background: black;
+        color: white;
+        border-radius: 8mm;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .top,
+      .bottom {
+        width: 100%;
+        height: 100vh;
+        font-family: poppins;
+        font-size: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /*CSS Code for responsiveness*/
+      @media screen and (max-width: 800px) {
+        .left {
+          position: relative;
+          width: 100vw;
+        }
+      }
+
 /* On screens that are 992px wide or less, go from four columns to two columns */
 @media screen and (max-width: 992px) {
   .column {
@@ -227,11 +361,10 @@
 .column div:hover p{
     color: #FFFFFF;
 }
-.column div:hover img{
-    filter: invert(100%) sepia(0%) saturate(7481%) hue-rotate(339deg) brightness(111%) contrast(104%);
-}
-.row .column div img{
-    width: 5vh;
+
+.card-content img {
+    width: 80%;
+    border-radius: 3vh;
 }
 .row .column div p{
     margin: 0px;
@@ -324,6 +457,18 @@
     animation: ripple-effect 0.6s ease-out forwards;
     z-index: 999999;
 }
+.mySkils{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.sideDiv{
+    width: 50%;
+}
+.rightdiv{
+    width: 50%;
+}
 
 @keyframes ripple-effect {
     to {
@@ -372,6 +517,15 @@
     }
 }
         @media screen and (max-width: 800px) {
+            .card {
+                height: 22vh;
+            }
+            .sub {
+                font-size: 1rem;
+            }
+            .flex-item-left{
+                margin-left: 0px !important;
+            }
         .flex-container {
             flex-direction: column-reverse;
         }
@@ -482,9 +636,76 @@
             </div>
         </div>
     </div>
-    <div class="mySkils" >
+
+    <div class="center">
+        <!-- <div class="top">Scroll Down</div> -->
+        <div class="stack-area">
+          <div class="left">
+            <div><p class="mainhead" style="text-align: center;" >My <b>Skills</b></p></div>
+          </div>
+          <div class="right">
+            <div class="cards">
+              <div class="card">
+                <div class="sub">Ionic</div>
+                <div class="card-content">
+                    <img src="../assets/ionic_logo_black.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">Angular</div>
+                <div class="card-content">
+                    <img src="../assets/angularjs.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">TypeScript</div>
+                <div class="card-content">
+                    <img src="../assets/ts.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">Git</div>
+                <div class="card-content">
+                    <img src="../assets/icon-git.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">Html</div>
+                <div class="card-content">
+                    <img src="../assets/ionic_logo_black.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">CSS</div>
+                <div class="card-content">
+                    <img src="../assets/css-3.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">Scss/Sass</div>
+                <div class="card-content">
+                    <img src="../assets/sass.png" />
+                </div>
+              </div>
+              <div class="card">
+                <div class="sub">JavaScript</div>
+                <div class="card-content">
+                    <img src="../assets/java-script.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <!-- <div class="mySkils" >
+    <div class="rightdiv">
         <p class="mainhead" style="text-align: center;" >My <b>Skills</b></p>
-        <div class="row">
+    </div>
+        <div class="sideDiv">
             <div class="column">
                 <div>
                     <img src="../assets/ionic_logo_black.png" />
@@ -534,7 +755,7 @@
                 </div>
             </div>
           </div>
-    </div>
+    </div> -->
     <div class="experiencediv">
         <p class="mainhead" style="text-align: center;color: #FFFFFF;">My <b>Experience</b></p>
         <div class="borderdiv" data-aos="flip-left" ata-aos-offset="600">
@@ -606,6 +827,63 @@
         <a href="#">Clients</a>
         <a href="#">Contact</a>
     </div>
+
+  
+      <script>
+        let cards = document.querySelectorAll(".card");
+        let stackArea = document.querySelector(".stack-area");
+  
+        function rotateCards() {
+          let angle = 0;
+          cards.forEach((card) => {
+            if (card.classList.contains("active")) {
+              card.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
+            } else {
+              card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+              angle = angle - 10;
+            }
+          });
+        }
+  
+        rotateCards();
+  
+        window.addEventListener("scroll", () => {
+          let proportion =
+            stackArea.getBoundingClientRect().top / window.innerHeight;
+          if (proportion <= 0) {
+            let n = cards.length;
+            let index = Math.ceil((proportion * n) / 2);
+            index = Math.abs(index) - 1;
+            for (let i = 0; i < n; i++) {
+                console.log(index,i)
+              if (i <= index) {
+                cards[i].classList.add("active");
+              } else {
+                cards[i].classList.remove("active");
+              }
+            }
+            rotateCards();
+          }
+        });
+  
+        //Code for responsiveness
+  
+        function adjust() {
+          let windowWidth = window.innerWidth;
+          let left = document.querySelector(".left");
+          left.remove();
+          if (windowWidth < 800) {
+            stackArea.insertAdjacentElement("beforebegin", left);
+          } else {
+            stackArea.insertAdjacentElement("afterbegin", left);
+          }
+        }
+        adjust();
+  
+        //detect Resize
+  
+        window.addEventListener("resize", adjust);
+      </script>
     <script>
 
         // Load the JSON animation data
