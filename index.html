@@ -206,6 +206,10 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        background-image: url("/assets/5172658.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-color: #000000; */
       }
       .stack-area {
         width: 100%;
@@ -283,6 +287,7 @@
         font-family: poppins;
         font-size: 2rem;
         font-weight: 700;
+        color: #FFFFFF;
       }
       .card-content {
         display: flex;
@@ -469,6 +474,11 @@
 .rightdiv{
     width: 50%;
 }
+#animation-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-color: #d82828; /* Optional background color */
+}
 
 @keyframes ripple-effect {
     to {
@@ -641,7 +651,7 @@
         <!-- <div class="top">Scroll Down</div> -->
         <div class="stack-area">
           <div class="left">
-            <div><p class="mainhead" style="text-align: center;" >My <b>Skills</b></p></div>
+            <div><p class="mainhead" style="text-align: center;color: #FFFFFF;margin-top: 20px;" >My <b>Skills</b></p></div>
           </div>
           <div class="right">
             <div class="cards">
@@ -697,68 +707,9 @@
           </div>
         </div>
       </div>
-
-
-
-
-    <!-- <div class="mySkils" >
-    <div class="rightdiv">
-        <p class="mainhead" style="text-align: center;" >My <b>Skills</b></p>
-    </div>
-        <div class="sideDiv">
-            <div class="column">
-                <div>
-                    <img src="../assets/ionic_logo_black.png" />
-                    <p>Ionic</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/angularjs.png" />
-                    <p>Angular</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/ts.png" />
-                    <p>TypeScript</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/icon-git.png" />
-                    <p>Git</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/ionic_logo_black.png" />
-                    <p>Html</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/css-3.png" />
-                    <p>css</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/sass.png" />
-                    <p>Scss/Sass</p>
-                </div>
-            </div>
-            <div class="column">
-                <div>
-                    <img src="../assets/java-script.png" />
-                    <p>JavaScript</p>
-                </div>
-            </div>
-          </div>
-    </div> -->
     <div class="experiencediv">
         <p class="mainhead" style="text-align: center;color: #FFFFFF;">My <b>Experience</b></p>
-        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="600">
+        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="300">
             <div class="experiencehead">
                 <img src="../assets/kshema.jpg" style="width: 10vh;"><p class="designation">UI Developer at KshemaGeneralInsurance</p><p class="years">Feb2023 - Present</p>
             </div>
@@ -768,7 +719,7 @@
                  polygons, markers and layers. Additionally, I developed a verity of applications and APKs using HTML, CSS and JavaScript, conducted through bug fixes to improve application performance and user experience and demonstrated basic Git operations for version control.
             </p>
         </div>
-        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="600">
+        <div class="borderdiv" data-aos="flip-left" ata-aos-offset="300">
             <div class="experiencehead">
                 <img src="../assets/itus.png" style="width: 10vh;"><p class="designation">Intern at Itus Insurance Brokers Private Limited</p><p class="years">Oct2022 - Feb2023</p>
             </div>
@@ -780,7 +731,7 @@
         </div>
 
     </div>
-    <div class="flex-container aboutclass" data-aos="fade-up" data-aos-offset="600" id="about">
+    <div class="flex-container aboutclass" data-aos="fade-up" data-aos-offset="300" id="about">
         <div class="leftDiv flex-item-left ">
             <div style="height: 100%;">
                 <img class="aboutimg" src="../assets/about.png" style="max-height: 80%;"/>
@@ -887,6 +838,16 @@
     <script>
 
         // Load the JSON animation data
+        document.addEventListener('DOMContentLoaded', function() {
+    var animationContainer = document.getElementById('animation-container');
+    var animation = lottie.loadAnimation({
+        container: animationContainer, // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../assets/Bg-animation.json' // the path to the animation json
+    });
+});
         lottie.loadAnimation({
           container: document.getElementById('lottie-container'),
           path: '../assets/personcoding.json',
