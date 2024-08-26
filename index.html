@@ -252,34 +252,38 @@
       }
       .card:nth-child(1) {
         background: rgb(64, 122, 255);
-        z-index: 8;
+        z-index: 9;
       }
       .card:nth-child(2) {
         background: rgb(221, 62, 88);
-        z-index: 7;
+        z-index: 8;
       }
       .card:nth-child(3) {
         background: rgb(186, 113, 245);
-        z-index: 6;
+        z-index: 7;
       }
       .card:nth-child(4) {
         background: rgb(247, 92, 208);
-        z-index: 5;
+        z-index: 6;
       }
       .card:nth-child(5) {
         background: rgb(64, 122, 255);
-        z-index: 4;
+        z-index: 5;
       }
       .card:nth-child(6) {
         background: rgb(221, 62, 88);
-        z-index: 3;
+        z-index: 4;
       }
       .card:nth-child(7) {
         background: rgb(186, 113, 245);
-        z-index: 2;
+        z-index: 3;
       }
       .card:nth-child(8) {
         background: rgb(247, 92, 208);
+        z-index: 2;
+      }
+      .card:nth-child(9) {
+        background: rgb(221, 62, 88);
         z-index: 1;
       }
       
@@ -368,7 +372,7 @@
 }
 
 .card-content img {
-    width: 80%;
+    width: 73%;
     border-radius: 3vh;
 }
 .row .column div p{
@@ -537,7 +541,7 @@
                 margin-left: 0px !important;
             }
         .flex-container {
-            flex-direction: column-reverse;
+            flex-direction: column-reverse !important;
         }
         .aboutclass{
             flex-direction: column;
@@ -620,8 +624,8 @@
         <nav class="nav">
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">Contact Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
         </nav>
         <a href="/assets/Mahesh_Babu_Ketineni.pdf" download class="downloadhref">
             <button class="resume-button"><i class="fa fa-download"></i> Resume</button>
@@ -630,8 +634,8 @@
     
     <div class="flex-container ">
         <div class="leftDiv flex-item-left " style="margin-left: 30px;">
-            <p class="mainhead mainheadAnimi" style="--n:53">Hello I'm <b>Mahesh Babu.</b> <b>Frontend Developer</b> Based In <b>India.</b></p>
-            <p class="subtitle">I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
+            <p class="mainhead mainheadAnimi" style="--n:53">Hello I'm <b>Mahesh Babu.</b> <b>Frontend Developer</b></p>
+            <!-- <p class="subtitle">I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p> -->
             <div class="icondivcontainer">
                 <!-- <div class="iconsdiv">
                     <img src="../assets/whatsapp.png" />
@@ -682,7 +686,7 @@
               <div class="card">
                 <div class="sub">Html</div>
                 <div class="card-content">
-                    <img src="../assets/ionic_logo_black.png" />
+                    <img src="../assets/Html.png" />
                 </div>
               </div>
               <div class="card">
@@ -703,6 +707,12 @@
                     <img src="../assets/java-script.png" />
                 </div>
               </div>
+              <div class="card">
+                <div class="sub">ReactJS</div>
+                <div class="card-content">
+                    <img src="../assets/ReactJS.png" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -711,10 +721,10 @@
         <p class="mainhead" style="text-align: center;color: #FFFFFF;">My <b>Experience</b></p>
         <div class="borderdiv" data-aos="flip-left" ata-aos-offset="300">
             <div class="experiencehead">
-                <img src="../assets/kshema.jpg" style="width: 10vh;"><p class="designation">UI Developer at KshemaGeneralInsurance</p><p class="years">Feb2023 - Present</p>
+                <img src="../assets/kshema.jpg" style="width: 10vh;"><p class="designation">Member of Technical Staff at KshemaGeneralInsurance</p><p class="years">Feb2023 - Present</p>
             </div>
             <p class="yearsMOB">Feb2023 - Present</p>
-            <p style="color: #FFFFFF;">As s UI developer, I lead Androidmdevelopment projects using Ionic, Angular, TypeScript, Html and SCSS with a particular focus on the crop insurance Android project where I implemented uaer focused
+            <p style="color: #FFFFFF;">As s Member of Technical Staff, I lead Androidmdevelopment projects using Ionic, Angular, TypeScript, Html and SCSS with a particular focus on the crop insurance Android project where I implemented uaer focused
                 features. I also designed and developed a Progressive Web APP (PWA) with Ionic , Which enhanced cross-platform accessibility. My proficiency with the Google Maps API allowed me to create interactive
                  polygons, markers and layers. Additionally, I developed a verity of applications and APKs using HTML, CSS and JavaScript, conducted through bug fixes to improve application performance and user experience and demonstrated basic Git operations for version control.
             </p>
@@ -739,14 +749,49 @@
         </div>
         <div class="rightDiv flex-item-right ">
             <p class="mainhead" style="text-align: start;">About <b>Me</b></p>
-            <p class="subtitleMOB">A passionate and self-driven UI Developer with a flair for crafting exceptional user experiences. I specialize in Android development, with a strong foundation in Ionic, Angular, Typescript, JavaScript, HTML, and SCSS, which enables me to bring dynamic mobile applications and Progressive Web Apps (PWAs) to life. I'm meticulous about creating pixel-perfect designs and writing clean, efficient, and highly performant code that exceeds expectations.
-
-                With a career spanning over 4 years, I've been on a mission to continually improve my skills, embracing new challenges and staying up-to-date with the latest technologies. Currently, I'm excited to be working on cutting-edge projects that showcase my expertise in Google Maps API integration, bug fixes, and version control. My passion for delivering top-notch user experiences drives me to push the boundaries of what's possible in mobile app development.
-                
-                When I'm not in developer mode, you can find me exploring new technologies or expanding my skill set. I'm always eager to learn and grow as a developer, and I'm excited to see where my passion for mobile app development takes me next.</p>
+            <p class="subtitleMOB">
+              I'm Mahesh Babu Kethineni, a skilled Android developer. 
+              I hold a Bachelor of Technology degree from R. V. R & J. C College of Engineering, Guntur, Andhra Pradesh. Currently, I'm working as a Member of Technical Staff at Kshema General Insurance Limited, where I've been leading Android development projects using Ionic, Angular, Typescript, HTML, and SCSS since February 2023. Prior to this, I worked as a Trainee Executive at Itus Insurance Brokers Pvt Ltd. 
+              I've developed several notable projects, including the Kshema App, Smart CCE, and a Progressive Web App (PWA), showcasing my expertise in designing and developing user-focused features, implementing modular components, and integrating third-party APIs. I'm proficient in languages like Java, SCSS, JavaScript, TypeScript, HTML5, and CSS3, and have experience with technologies like React.js, Angular, AngularJS, Ionic, jQuery, Bootstrap, and Restful API. 
+              I've also received a Certificate of Appreciation for my exceptional hard work and exemplary service, significantly contributing to the company's success and growth.
+            </p>
         </div>
     </div>
-    <div class="flex-container"  id="contact" style="padding-top: 0;">
+    <div class="flex-container"  id="projects" style="padding-top: 0;background-color: #000000;" data-aos="fade-right" data-aos-offset="500">
+      <div class="leftDiv flex-item-left mailSent" style="padding: 20px 20px 20px;">
+          <div style="height: 100%;
+          justify-content: center;
+          align-items: center;
+          display: flex;">
+              <img src="./assets/KshemaApp.jpg" style="border-radius: 10px;width: 100%;"/>
+          </div>
+      </div>
+      <div class="rightDiv flex-item-right contactright " style="padding: 20px 20px 20px;" data-aos="fade-up" data-aos-offset="500">
+          <p class="mainhead" style="text-align: start;color: #FFFFFF;"><b>Kshema App</b></p>
+          <p class="subtitleMOB" style="color: #FFFFFF;">
+            Frontend Kshema app with features user-drawn polygons using Google Maps to define crop areas, multiple peril options, up to 100 crop choices, geo-tagging facility, video interface capabilities and 10 language choices.
+             • Integration with Razorpay and CC Avenue for secure payment processing. • Implemented modular components and services to promote code reusability, enhancing maintainability and scalability.
+             • Integrated New Relic to monitor and analyze application performance, identify bottlenecks, and troubleshoot errors in production, ensuring seamless workflow and optimal user experience.
+          </p>
+      </div>
+  </div>
+  <div class="flex-container"  style="padding-top: 0;background-color: #000000;flex-direction: row-reverse;" data-aos="fade-left" data-aos-offset="500">
+    <div class="leftDiv flex-item-left mailSent" style="padding: 20px 20px 20px;">
+        <div style="height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;">
+            <img src="./assets/CCEApp.jpg" style="border-radius: 10px;width: 100%;"/>
+        </div>
+    </div>
+    <div class="rightDiv flex-item-right contactright " style="padding: 20px 20px 20px;" data-aos="fade-up" data-aos-offset="500">
+        <p class="mainhead" style="text-align: start;color: #FFFFFF;"><b>Smart CCE App</b></p>
+        <p class="subtitleMOB" style="color: #FFFFFF;">
+          Designed and implemented a Frontend Smart CCE App, enabling POSPs to efficiently conduct crop cutting experiments with ease. • The app is designed to function offline by utilizing SQLite as a local database to store data and leveraging local storage (such as Indexed DB or Local Storage) to cache frequently accessed resources, enabling users to access and interact with the app’s core features even without an internet connection.
+        </p>
+    </div>
+</div>
+    <div class="flex-container"  id="contact" style="padding-top: 40;">
         <div class="leftDiv flex-item-left mailSent" style="padding: 0 77px 40px 77px;">
             <div style="height: 100%;">
                 <form action="mailto:maheshbabukethineni@gmail.com" method="post" enctype="text/plain">
@@ -775,8 +820,8 @@
         </h2>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
 
   
